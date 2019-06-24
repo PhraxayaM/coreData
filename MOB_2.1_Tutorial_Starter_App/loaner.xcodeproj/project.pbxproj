@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		448856882239D544001EDDC4 /* Loanee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448856872239D544001EDDC4 /* Loanee.swift */; };
+		CD28FAE922BFFA3400BEF2AC /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD28FAE822BFFA3400BEF2AC /* ItemStore.swift */; };
 		CD6778F622B97A9800325EB7 /* LoanedItems.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CD6778F422B97A9800325EB7 /* LoanedItems.xcdatamodeld */; };
 		CD6778F922B98B2E00325EB7 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6778F722B98B2E00325EB7 /* Item+CoreDataClass.swift */; };
 		CD6778FA22B98B2E00325EB7 /* Item+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6778F822B98B2E00325EB7 /* Item+CoreDataProperties.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		448856872239D544001EDDC4 /* Loanee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loanee.swift; sourceTree = "<group>"; };
+		CD28FAE822BFFA3400BEF2AC /* ItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		CD6778F522B97A9800325EB7 /* LoanedItems.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LoanedItems.xcdatamodel; sourceTree = "<group>"; };
 		CD6778F722B98B2E00325EB7 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		CD6778F822B98B2E00325EB7 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				CD6778F822B98B2E00325EB7 /* Item+CoreDataProperties.swift */,
 				448856872239D544001EDDC4 /* Loanee.swift */,
 				CD6778F422B97A9800325EB7 /* LoanedItems.xcdatamodeld */,
+				CD28FAE822BFFA3400BEF2AC /* ItemStore.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				CD6778FA22B98B2E00325EB7 /* Item+CoreDataProperties.swift in Sources */,
 				E9D24DEF212789B90045C5D8 /* UIImage+ImagePickerController.swift in Sources */,
 				CD6778F622B97A9800325EB7 /* LoanedItems.xcdatamodeld in Sources */,
+				CD28FAE922BFFA3400BEF2AC /* ItemStore.swift in Sources */,
 				E929E9692124EB7E0018488C /* AppDelegate.swift in Sources */,
 				E969554E21277C3100457E12 /* ItemEditorViewController.swift in Sources */,
 				448856882239D544001EDDC4 /* Loanee.swift in Sources */,

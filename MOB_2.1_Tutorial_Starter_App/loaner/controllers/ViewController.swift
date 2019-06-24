@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
+        var store: ItemStore!
         super.viewDidLoad()
         
         //set up collection view layout to be half of the screen width and with some padding
