@@ -54,16 +54,21 @@ class ViewController: UIViewController {
         //TODO: archive returned items instead of deleting them
         deleteItem(at: index)
     }
-    
+    // Identify the item by its index
     func deleteItem(at index: Int) {
+        // Delete the user-selected item from the context
+        let viewContext = store.persistentContainer.viewContext
+        viewContext.delete(items[index])
+        
+        // Delete the user-selected item from the data source
         items.remove(at: index)
         collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
+        
+        // Save changes to the Managed Object Context
+        store.saveContext()
+        
     }
-//    func createNewItem() -> Item {
-//        let newItem = NSEntityDescription.insertNewObject(forEntityName: "Item", into: store.persistentContainer.viewContext) as! Item
-//        return newItem
-//    }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
