@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
     
     var items: [Item] = []
-    
+    var store: ItemStore!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
-        var store: ItemStore!
+        
         super.viewDidLoad()
         
         //set up collection view layout to be half of the screen width and with some padding
@@ -26,10 +27,19 @@ class ViewController: UIViewController {
         flow.itemSize = CGSize(width: screenSize.width / 2 - horizontalPadding * 2, height: screenSize.width / 2 - verticalPadding * 2)
         flow.sectionInset = UIEdgeInsets(top: verticalPadding, left: horizontalPadding, bottom: verticalPadding, right: horizontalPadding)
         collectionView.collectionViewLayout = flow
+        
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+
+        // Save the new items in the Managed Object Context
+        store.saveContext()
+    }
+    
 
     func createNewItem() -> Item {
-        return Item(itemTitle: "Untitled Item")
+        let newItem = NSEntityDescription.insertNewObject(forEntityName: "Item", into: store.persistentContainer.viewContext) as! Item
+        return newItem
     }
     
     func add(saved item: Item) {
@@ -46,6 +56,10 @@ class ViewController: UIViewController {
         items.remove(at: index)
         collectionView.deleteItems(at: [IndexPath(row: index, section: 0)])
     }
+//    func createNewItem() -> Item {
+//        let newItem = NSEntityDescription.insertNewObject(forEntityName: "Item", into: store.persistentContainer.viewContext) as! Item
+//        return newItem
+//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
@@ -108,7 +122,9 @@ class ViewController: UIViewController {
         default:
             break
         }
+        
     }
+   
 }
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
